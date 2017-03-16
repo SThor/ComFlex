@@ -6,7 +6,6 @@ import tp2_obj.exceptions.InsufficientBalanceException;
 import tp2_obj.exceptions.InvalidCartException;
 import tp2_obj.exceptions.UnknownAccountException;
 import tp2_obj.exceptions.UnknownItemException;
-import tp2_obj.impl.Client;
 
 public interface ILane {
 	/**
@@ -25,7 +24,7 @@ public interface ILane {
 	 * @throws MismatchClientCartException
 	 *             if the given client does not own the given cart
 	 */
-	public Cart addItemToCart(Cart cart, Client client, Object item, int qty)
+	public Cart addItemToCart(Cart cart, IClient client, Object item, int qty)
 			throws UnknownItemException, InvalidCartException;
 
 	/**
@@ -42,4 +41,6 @@ public interface ILane {
 	public Order pay(Cart cart, String address, String bankAccountRef)
 			throws InvalidCartException, UnknownItemException,
 			InsufficientBalanceException, UnknownAccountException;
+	
+	public void init(IProvider prov, IBank bk);
 }

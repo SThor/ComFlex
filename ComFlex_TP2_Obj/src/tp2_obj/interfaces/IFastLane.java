@@ -4,7 +4,6 @@ import tp2_obj.datatypes.Order;
 import tp2_obj.exceptions.InsufficientBalanceException;
 import tp2_obj.exceptions.UnknownAccountException;
 import tp2_obj.exceptions.UnknownItemException;
-import tp2_obj.impl.Client;
 
 public interface IFastLane {
 	/**
@@ -24,7 +23,9 @@ public interface IFastLane {
 	 * @throws InsufficientBalanceException
 	 * @throws UnknownAccountException
 	 */
-	public Order oneShotOrder(Client client, Object item, int qty,
+	public Order oneShotOrder(IClient client, Object item, int qty,
 			String address, String bankAccountRef) throws UnknownItemException,
 			InsufficientBalanceException, UnknownAccountException;
+	
+	public void init(IProvider prov, IBank bk);
 }

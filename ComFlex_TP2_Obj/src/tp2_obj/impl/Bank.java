@@ -10,18 +10,7 @@ public class Bank implements IBank{
 	private IAccount estore;
 	private IAccount anne, bob;
 
-	public Bank () {
-		estore = new Account();
-		anne = new Account();
-		bob = new Account();
-		
-		estore.setOwner("Estore");
-		estore.setAmount(0);
-		anne.setOwner("Anne");
-		anne.setAmount(30);
-		bob.setOwner("Bob");
-		bob.setAmount(100);
-	}
+	public Bank () {}
 	
 	@Override
      public void transfert(String from, String to, double amount)
@@ -50,5 +39,22 @@ public class Bank implements IBank{
 			Afrom.setAmount( fromBalance - amount );
 			Ato.setAmount( toBalance + amount );
     }
+
+	@Override
+	public void init() {
+		estore = new Account();
+		anne = new Account();
+		bob = new Account();		
+	}
+
+	@Override
+	public void initAccounts() {
+		estore.setOwner("Estore");
+		estore.setAmount(0);
+		anne.setOwner("Anne");
+		anne.setAmount(30);
+		bob.setOwner("Bob");
+		bob.setAmount(100);
+	}
     
  }

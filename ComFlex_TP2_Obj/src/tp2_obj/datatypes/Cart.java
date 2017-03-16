@@ -3,18 +3,18 @@ package tp2_obj.datatypes;
 import java.util.HashMap;
 import java.util.Map;
 
-import tp2_obj.impl.Client;
+import tp2_obj.interfaces.IClient;
 
 public class Cart {
     
     /** The client owning the cart. */
-    public Client client;
+    public IClient client;
     
     /** The items currently added to the cart. key=item, value=quantity. */
     private Map items = new HashMap();
     
     
-    public Cart(Client client) {
+    public Cart(IClient client) {
         this.client = client;
     }
     

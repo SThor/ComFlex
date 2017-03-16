@@ -23,4 +23,6 @@ public interface IConsult {
 	 * @throws UnknownItemException
 	 */
 	public double getPrice(Object item) throws UnknownItemException;
+	
+	public void init(IProvider prov, IBank bk);
 }

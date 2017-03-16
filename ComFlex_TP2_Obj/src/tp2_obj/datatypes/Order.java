@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import tp2_obj.exceptions.UnknownItemException;
-import tp2_obj.impl.Client;
+import tp2_obj.interfaces.IClient;
 
 public class Order {
     
@@ -18,7 +18,7 @@ public class Order {
     /** The index of this order. */
     private int num;
     
-    private Client client;
+    private IClient client;
     private Object item;
     private String address;
     private String bankAccountRef;
@@ -44,7 +44,7 @@ public class Order {
         date = new Date();
     }
     
-    public Order(Client client, String address, String bankAccountRef) {
+    public Order(IClient client, String address, String bankAccountRef) {
         this();
         this.client = client;
         this.address = address;

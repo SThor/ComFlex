@@ -1,0 +1,17 @@
+package tp2_obj.impl;
+
+import tp2_obj.interfaces.IConsult;
+import tp2_obj.interfaces.IFastLane;
+import tp2_obj.interfaces.ILane;
+
+public interface IClient {
+
+	public abstract void init(IFastLane fastLane, ILane lane, IConsult consult);
+
+	// -----------------------------------------------------
+	// Implementation of the Runnable interface
+	// -----------------------------------------------------
+
+	public abstract void run();
+
+}

@@ -13,6 +13,7 @@ import tp2_obj.exceptions.InvalidCartException;
 import tp2_obj.exceptions.UnknownAccountException;
 import tp2_obj.exceptions.UnknownItemException;
 import tp2_obj.interfaces.IBank;
+import tp2_obj.interfaces.IClient;
 import tp2_obj.interfaces.IConsult;
 import tp2_obj.interfaces.IFastLane;
 import tp2_obj.interfaces.ILane;
@@ -26,9 +27,12 @@ public class Store implements IFastLane, ILane, IConsult {
 	/**
 	 * Constructs a new StoreImpl
 	 */
-	public Store(IProvider prov, IBank bk) {
+	public Store() {}
+	
+	@Override
+	public void init(IProvider prov, IBank bk){
 		provider = prov;
-		bank = bk;
+		bank = bk;		
 	}
 
 	@Override
@@ -51,7 +55,7 @@ public class Store implements IFastLane, ILane, IConsult {
 	}
 
 	@Override
-	public Cart addItemToCart(Cart cart, Client client, Object item, int qty)
+	public Cart addItemToCart(Cart cart, IClient client, Object item, int qty)
 			throws UnknownItemException, InvalidCartException {
 
 		if (cart == null) {
@@ -112,7 +116,7 @@ public class Store implements IFastLane, ILane, IConsult {
 	private Map itemsInStock = new HashMap();
 
 	@Override
-	public Order oneShotOrder(Client client, Object item, int qty,
+	public Order oneShotOrder(IClient client, Object item, int qty,
 			String address, String bankAccountRef) throws UnknownItemException,
 			InsufficientBalanceException, UnknownAccountException {
 
@@ -167,7 +171,7 @@ public class Store implements IFastLane, ILane, IConsult {
 		ItemInStock iis = (ItemInStock) itemsInStock.get(item);
 		if (iis == null) {
 			int quantity = qty + more;
-			delay += provider.order(this, item, quantity);
+			delay += provider.order(item, quantity);
 			ItemInStock newItem = new ItemInStock(item, more, price, provider);
 			itemsInStock.put(item, newItem);
 		} else {
@@ -179,7 +183,7 @@ public class Store implements IFastLane, ILane, IConsult {
 			} else {
 				// An order to the provider needs to be issued
 				int quantity = qty + more;
-				delay += provider.order(this, item, quantity);
+				delay += provider.order(item, quantity);
 				iis.quantity += more;
 			}
 		}

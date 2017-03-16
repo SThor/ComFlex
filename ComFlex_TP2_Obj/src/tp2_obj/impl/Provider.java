@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tp2_obj.exceptions.UnknownItemException;
+import tp2_obj.interfaces.IFastLane;
 import tp2_obj.interfaces.IProvider;
 
 public class Provider implements IProvider{
@@ -32,7 +33,7 @@ public class Provider implements IProvider{
     }
     
     @Override
-    public int order(Store store, Object item, int qty )
+    public int order(Object item, int qty )
     throws UnknownItemException {
         
         if ( ! itemPrices.containsKey(item) )

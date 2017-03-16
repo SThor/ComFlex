@@ -7,20 +7,25 @@ import tp2_obj.exceptions.InvalidCartException;
 import tp2_obj.exceptions.UnknownAccountException;
 import tp2_obj.exceptions.UnknownItemException;
 import tp2_obj.interfaces.IBank;
+import tp2_obj.interfaces.IClient;
 import tp2_obj.interfaces.IConsult;
 import tp2_obj.interfaces.IFastLane;
 import tp2_obj.interfaces.ILane;
 import tp2_obj.interfaces.IProvider;
-import tp2_obj.interfaces.IStore;
 
-public class Client implements Runnable {
-
-    private IStore store;
+public class Client implements IClient {
+	
     private IFastLane fastLane;
     private ILane lane;
     private IConsult consult;
 
-    public Client (IFastLane fastLane, ILane lane, IConsult consult){
+    public Client (){}
+    
+    /* (non-Javadoc)
+	 * @see tp2_obj.impl.IClient#init(tp2_obj.interfaces.IFastLane, tp2_obj.interfaces.ILane, tp2_obj.interfaces.IConsult)
+	 */
+    @Override
+	public void init(IFastLane fastLane, ILane lane, IConsult consult){
     	this.fastLane = fastLane;
     	this.lane = lane;
     	this.consult = consult;
@@ -29,7 +34,11 @@ public class Client implements Runnable {
     // Implementation of the Runnable interface
     // -----------------------------------------------------
 
-    public void run() {
+    /* (non-Javadoc)
+	 * @see tp2_obj.impl.IClient#run()
+	 */
+    @Override
+	public void run() {
         
         // Scenario 1
         // Direct ordering of an item
@@ -95,17 +104,5 @@ public class Client implements Runnable {
         }
         Order order = lane.pay(cart,address,account);
         System.out.println(order);
-    }
-
-    public static void main (String [] args) {
-		IProvider prov = new Provider();
-		IBank bank = new Bank();
-		Store store = new Store(prov, bank);
-		IFastLane fastLane = store;
-	    ILane lane= store;
-	    IConsult consult= store;
-		Client cl = new Client(fastLane, lane, consult);
-		
-		cl.run();
     }
 }

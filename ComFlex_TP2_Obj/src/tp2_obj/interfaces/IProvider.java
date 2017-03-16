@@ -21,6 +21,6 @@ public interface IProvider {
      * @param qty    the quantity ordered
      * @return       the delay (in hours)
      */
-    public int order(Store store, Object item, int qty )
+    public int order(Object item, int qty )
     throws UnknownItemException;
 }
