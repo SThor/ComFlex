@@ -1,0 +1,13 @@
+package tp2_obj.interfaces;
+
+import tp2_obj.exceptions.UnknownItemException;
+
+public interface IProvider {
+	/**
+     * Get the price of an item provided by this provider.
+     * 
+     * @param item
+     * @return
+     */
+    public double getPrice( Object item ) throws UnknownItemException;
+}

@@ -1,0 +1,21 @@
+package tp1.ex3.client.impl;
+
+import tp1.ex3.client.ClientComponent;
+import tp1.ex3.client.interfaces.GenHello;
+
+public class ClientImpl extends ClientComponent{
+
+	@Override
+	protected GenHello make_service() {
+		return new GenHello() {
+			
+			@Override
+			public String genHello() {
+				String hello = "Hello";
+				requires().helper().encapsule(hello);
+				return hello;
+			}
+		};
+	}
+
+}

@@ -1,0 +1,5 @@
+ackage tp1.ex3.decrypte;
+
+public interface Crypt {
+
+}

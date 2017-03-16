@@ -1,0 +1,5 @@
+namespace tp2_obj.client{
+	component ClientComponent{
+		
+	}
+}

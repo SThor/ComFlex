@@ -1,0 +1,28 @@
+package tp1.ex3.server.impl;
+
+import tp1.ex3.server.ServerComponent;
+import tp1.ex3.server.interfaces.Encapsule;
+
+
+public class ServerImpl extends ServerComponent {
+
+	private int id;
+	private String identite = "server"+id+": ";
+
+	public ServerImpl(int i) {
+		this.id = i;
+	}
+
+	@Override
+	protected Encapsule make_service() {
+		return new Encapsule() {
+
+			@Override
+			public void encapsule(String source) {
+				String encapsule = identite+source+" World !";
+				System.out.println(encapsule);
+			}
+		};
+	}
+
+}

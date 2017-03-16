@@ -1,0 +1,15 @@
+package tp1.ex3;
+
+import tp1.ex3.composite.CompositeComponent;
+import tp1.ex3.composite.impl.CompositeImpl;
+
+
+
+public class Run {
+	public static void main(String[] args){
+		CompositeComponent.Component composite = new CompositeImpl().newComponent();
+		
+		composite.service().genHello();
+		
+	}
+}

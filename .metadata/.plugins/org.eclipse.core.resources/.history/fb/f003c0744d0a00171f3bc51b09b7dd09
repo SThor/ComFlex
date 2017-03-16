@@ -1,0 +1,5 @@
+package tp2_obj.interfaces;
+
+public interface IConsult {
+
+}

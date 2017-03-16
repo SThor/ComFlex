@@ -1,0 +1,8 @@
+import tp1.ex3.server.interfaces.Encapsule
+
+namespace tp1.ex3.crypte{
+	component Crypte{
+		  provides service : Encapsule
+		  requires helper : Crypt
+	}
+}

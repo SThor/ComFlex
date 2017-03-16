@@ -1,0 +1,11 @@
+package tp2_obj.interfaces;
+
+import tp2_obj.datatypes.Order;
+import tp2_obj.impl.Client;
+
+public interface IStore {
+
+	Order oneShotOrderClient(Client client, Object item, int qty,
+			String address, String bankAccountRef);
+
+}

@@ -1,0 +1,27 @@
+import tp1.ex3.server.ServerComponent
+import tp1.ex3.client.ClientComponent
+import tp1.ex3.client.interfaces.GenHello
+import tp1.ex3.crypte.CrypteComponent
+import tp1.ex3.decrypte.DecryptComponent
+
+namespace tp1.ex3.composite{
+	component CompositeComponent{
+		provides service : GenHello = client.service
+		
+		part server : ServerComponent{
+			
+		}
+		
+		part client : ClientComponent{
+			bind helper to server.service
+		}
+		
+		part crypt : CrypteComponent{
+			bind helper to decrypt.service
+		}
+		
+		part decrypt : DecryptComponent{
+			bind helper to server.service
+		}
+	}
+}
