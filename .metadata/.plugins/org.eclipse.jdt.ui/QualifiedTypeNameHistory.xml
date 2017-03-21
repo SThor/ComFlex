@@ -28,4 +28,22 @@
 <fullyQualifiedTypeName name="tp1.ex3.decrypte.impl.DecryptImpl"/>
 <fullyQualifiedTypeName name="tp1.ex3.crypte.CrypteComponent"/>
 <fullyQualifiedTypeName name="tp1.ex3.crypte.impl.CryptImpl"/>
+<fullyQualifiedTypeName name="impl.Provider"/>
+<fullyQualifiedTypeName name="exceptions.InsufficientBalanceException"/>
+<fullyQualifiedTypeName name="exceptions.UnknownAccountException"/>
+<fullyQualifiedTypeName name="exceptions.UnknownItemException"/>
+<fullyQualifiedTypeName name="datatypes.ItemInStock"/>
+<fullyQualifiedTypeName name="datatypes.Order"/>
+<fullyQualifiedTypeName name="exceptions.InvalidCartException"/>
+<fullyQualifiedTypeName name="datatypes.Cart"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.IBank"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.IProvider"/>
+<fullyQualifiedTypeName name="tp2_obj.impl.Client"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.ILane"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.IConsult"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.IStore"/>
+<fullyQualifiedTypeName name="tp2_obj.interfaces.IFastLane"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

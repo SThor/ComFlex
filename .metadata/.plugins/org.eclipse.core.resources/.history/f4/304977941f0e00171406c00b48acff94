@@ -1,0 +1,29 @@
+package tp2_may.impl;
+
+import tp2_may.store.StoreComponent;
+import tp2_obj.impl.Bank;
+import tp2_obj.impl.Provider;
+import tp2_obj.interfaces.IBank;
+import tp2_obj.interfaces.IProvider;
+
+public class StoreImpl extends StoreComponent{
+	IProvider provider = new Provider();
+	IBank bank = new Bank();
+
+	@Override
+	protected IProvider make_provider() {
+		return provider;
+	}
+
+	@Override
+	protected IBank make_bank() {
+		return bank;
+	}
+	
+	@Override
+	protected void start(){
+		bank.init();
+		bank.initAccounts();
+	}
+
+}

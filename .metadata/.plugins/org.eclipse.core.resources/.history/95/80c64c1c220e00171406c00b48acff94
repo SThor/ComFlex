@@ -1,0 +1,33 @@
+package tp2_may.impl;
+
+import tp2_may.bank.AccountComponent;
+import tp2_may.bank.BankComponent;
+import tp2_may.bank.DeskComponent;
+import tp2_obj.impl.Account;
+
+public class BankImpl extends BankComponent{
+	Account acc1 = new Account();
+	Account acc2 = new Account();
+	AccountComponent acc3 = new Account();
+
+	@Override
+	protected DeskComponent make_desk() {
+		return new DeskImpl();
+	}
+
+	@Override
+	protected AccountComponent make_acc1() {
+		return acc1;
+	}
+
+	@Override
+	protected AccountComponent make_acc2() {
+		return acc2;
+	}
+
+	@Override
+	protected AccountComponent make_acc3() {
+		return acc3;
+	}
+
+}

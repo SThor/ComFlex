@@ -1,7 +1,0 @@
-package tp1.ex3.server.impl;
-
-import ServerComponent;
-
-public class ServerImpl extends ServerComponent {
-
-}

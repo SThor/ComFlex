@@ -1,0 +1,38 @@
+package tp2_may.impl;
+
+import tp2_may.store.StoreComponent;
+import tp2_obj.impl.Bank;
+import tp2_obj.impl.Provider;
+import tp2_obj.impl.Store;
+import tp2_obj.interfaces.IBank;
+import tp2_obj.interfaces.IProvider;
+import tp2_obj.interfaces.store.IConsult;
+import tp2_obj.interfaces.store.IFastLane;
+import tp2_obj.interfaces.store.ILane;
+
+public class StoreImpl extends StoreComponent{
+	Store store = new Store();
+	
+	@Override
+	protected void start(){
+	}
+
+	@Override
+	protected IFastLane make_fastLane() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected ILane make_lane() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected IConsult make_consult() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

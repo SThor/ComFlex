@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import tp2_obj.exceptions.UnknownItemException;
-import tp2_obj.interfaces.IFastLane;
 import tp2_obj.interfaces.IProvider;
+import tp2_obj.interfaces.store.IFastLane;
 
 public class Provider implements IProvider{
     

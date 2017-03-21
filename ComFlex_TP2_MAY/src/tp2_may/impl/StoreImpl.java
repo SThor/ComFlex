@@ -1,0 +1,33 @@
+package tp2_may.impl;
+
+import tp2_may.store.StoreComponent;
+import tp2_obj.impl.Store;
+import tp2_obj.interfaces.store.IConsult;
+import tp2_obj.interfaces.store.IFastLane;
+import tp2_obj.interfaces.store.ILane;
+
+public class StoreImpl extends StoreComponent{
+	private Store store = new Store();
+	
+	@Override
+	protected void start(){
+		store.init(requires().provider(), requires().bank());
+		super.start();
+	}
+
+	@Override
+	protected IFastLane make_fastLane() {
+		return store;
+	}
+
+	@Override
+	protected ILane make_lane() {
+		return store;
+	}
+
+	@Override
+	protected IConsult make_consult() {
+		return store;
+	}
+
+}

@@ -1,0 +1,27 @@
+import tp2_obj.interfaces.IBank
+import tp2_obj.interfaces.IAccount
+
+namespace tp2_may.bank{
+	component BankComponent{
+		provides bank : IBank = desk.bank
+		part desk : DeskComponent{
+			bind acc1 to estore.account
+			bind acc2 to anne.account
+			bind acc3 to bob.account
+		}
+		part estore : AccountComponent{}
+		part anne : AccountComponent{}
+		part bob : AccountComponent{}
+	}
+	
+	component AccountComponent{
+		provides account : IAccount
+	}
+	
+	component DeskComponent{
+		provides bank : IBank
+		requires acc1 : IAccount
+		requires acc2 : IAccount
+		requires acc3 : IAccount
+	}
+}

@@ -1,0 +1,19 @@
+package tp2_may.impl;
+
+import tp2_may.client.ClientComponent;
+import tp2_obj.impl.Client;
+
+public class ClientImpl extends ClientComponent{
+	Client client = new Client();
+
+	@Override
+	protected Runnable make_run() {
+		return client;
+	}
+	
+	@Override
+	protected void start(){
+		client.init(store, store, store);
+	}
+
+}

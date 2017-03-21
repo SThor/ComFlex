@@ -24,5 +24,7 @@ public interface IAccount {
 	 * we should have a account number.
 	 */
 	public abstract boolean equals(Object other);
+	
+	public void init(String name, double amount);
 
 }

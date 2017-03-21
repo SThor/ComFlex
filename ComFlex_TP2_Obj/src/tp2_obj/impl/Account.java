@@ -68,5 +68,11 @@ public class Account implements IAccount {
         Account otherAccount = (Account) other;
         return ( otherAccount.owner == owner);
     }
+
+	@Override
+	public void init(String name, double amount) {
+		setOwner(name);
+		setAmount(amount);
+	}
     
 }

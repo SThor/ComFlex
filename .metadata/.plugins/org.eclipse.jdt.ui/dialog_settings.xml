@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="true" key="Replace"/>
+	<item value="true" key="Annotations"/>
+	<item value="true" key="Abstract"/>
+	<item value="true" key="Comments"/>
+	<item value="false" key="InstanceOf"/>
+	<item value="true" key="Public"/>
+	<item value="false" key="delegateUpdating"/>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>

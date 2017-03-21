@@ -1,0 +1,7 @@
+import tp2_obj.interfaces.IAccount
+
+namespace tp2_may.account{
+	component AccountComponent{
+		provides account : IAccount
+	}
+}

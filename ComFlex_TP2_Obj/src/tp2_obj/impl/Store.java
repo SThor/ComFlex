@@ -5,19 +5,19 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import tp2_obj.datatypes.Cart;
-import tp2_obj.datatypes.ItemInStock;
-import tp2_obj.datatypes.Order;
 import tp2_obj.exceptions.InsufficientBalanceException;
 import tp2_obj.exceptions.InvalidCartException;
 import tp2_obj.exceptions.UnknownAccountException;
 import tp2_obj.exceptions.UnknownItemException;
+import tp2_obj.impl.datatypes.Cart;
+import tp2_obj.impl.datatypes.ItemInStock;
+import tp2_obj.impl.datatypes.Order;
 import tp2_obj.interfaces.IBank;
 import tp2_obj.interfaces.IClient;
-import tp2_obj.interfaces.IConsult;
-import tp2_obj.interfaces.IFastLane;
-import tp2_obj.interfaces.ILane;
 import tp2_obj.interfaces.IProvider;
+import tp2_obj.interfaces.store.IConsult;
+import tp2_obj.interfaces.store.IFastLane;
+import tp2_obj.interfaces.store.ILane;
 
 public class Store implements IFastLane, ILane, IConsult {
 

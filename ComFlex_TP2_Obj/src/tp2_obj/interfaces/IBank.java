@@ -7,8 +7,6 @@ public interface IBank {
 	public void transfert(String from, String to, double amount)
 	        throws InsufficientBalanceException, UnknownAccountException;
 	
-	public void init();
-	
-	public void initAccounts();
+	public void init(IAccount... accounts);
 
 }

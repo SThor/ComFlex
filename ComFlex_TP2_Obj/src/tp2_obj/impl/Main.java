@@ -1,10 +1,11 @@
 package tp2_obj.impl;
 
+import tp2_obj.interfaces.IAccount;
 import tp2_obj.interfaces.IBank;
-import tp2_obj.interfaces.IConsult;
-import tp2_obj.interfaces.IFastLane;
-import tp2_obj.interfaces.ILane;
 import tp2_obj.interfaces.IProvider;
+import tp2_obj.interfaces.store.IConsult;
+import tp2_obj.interfaces.store.IFastLane;
+import tp2_obj.interfaces.store.ILane;
 
 public class Main {
 	public static void main (String [] args) {
@@ -12,13 +13,20 @@ public class Main {
 		IBank bank = new Bank();
 		Client cl = new Client();
 		Store store = new Store();
+		IAccount estore = new Account();
+		IAccount anne = new Account();
+		IAccount bob = new Account();
 		
 		IFastLane fastLane = store;
 	    ILane lane= store;
 	    IConsult consult= store;
 	    
-		bank.init();
-		bank.initAccounts();		
+		estore.init("Estore", 0);
+		anne.init("Anne", 30);
+		bob.init("Bob", 100);
+		
+		bank.init(estore, anne, bob);
+		
 		cl.init(fastLane, lane, consult);
 		store.init(prov, bank);
 		

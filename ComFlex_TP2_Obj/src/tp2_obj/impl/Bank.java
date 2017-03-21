@@ -41,20 +41,10 @@ public class Bank implements IBank{
     }
 
 	@Override
-	public void init() {
-		estore = new Account();
-		anne = new Account();
-		bob = new Account();		
-	}
-
-	@Override
-	public void initAccounts() {
-		estore.setOwner("Estore");
-		estore.setAmount(0);
-		anne.setOwner("Anne");
-		anne.setAmount(30);
-		bob.setOwner("Bob");
-		bob.setAmount(100);
+	public void init(IAccount... accounts) {
+		estore = accounts[0];
+		anne = accounts[1];
+		bob = accounts[2];
 	}
     
  }

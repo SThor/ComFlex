@@ -1,0 +1,7 @@
+import tp2_obj.interfaces.IProvider
+
+namespace tp2_may.provider{
+	component ProviderComponent{
+		provides provider : IProvider
+	}
+}

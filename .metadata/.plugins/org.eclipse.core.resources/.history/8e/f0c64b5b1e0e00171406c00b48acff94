@@ -1,0 +1,12 @@
+import tp2_obj.interfaces.store.IFastLane
+import tp2_obj.interfaces.store.ILane
+import tp2_obj.interfaces.store.IConsult
+
+namespace tp2_may.client{
+	component ClientComponent{
+		provides run : Runnable
+		requires fastLane : IFastLane
+		requires lane : ILane
+		requires consut : IConsult 
+	}
+}

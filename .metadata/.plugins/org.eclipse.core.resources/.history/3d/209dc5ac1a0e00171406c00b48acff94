@@ -1,0 +1,7 @@
+import tp2_obj.interfaces.IBank
+
+namespace tp2_may.bank{
+	component BankComponent{
+		provides bank : IBank
+	}
+}

@@ -1,0 +1,21 @@
+package tp2_may.impl;
+
+import tp2_may.bank.DeskComponent;
+import tp2_obj.impl.Bank;
+import tp2_obj.interfaces.IBank;
+
+public class DeskImpl extends DeskComponent{
+	
+	Bank bank = new Bank();
+
+	@Override
+	protected IBank make_bank() {
+		return bank;
+	}
+	
+	@Override
+	protected void start(){
+		super.start();
+	}
+
+}

@@ -1,0 +1,26 @@
+import tp2_obj.interfaces.IProvider
+import tp2_obj.interfaces.IBank
+import tp2_obj.interfaces.store.IFastLane
+import tp2_obj.interfaces.store.ILane
+import tp2_obj.interfaces.store.IConsult
+
+namespace tp2_may.store{
+	component StoreComponent{
+		provides fastLane : IFastLane
+		provides lane : ILane
+		provides consult : IConsult
+		requires provider : IProvider
+		requires bank : IBank
+	}
+	
+	component ProviderComponent{
+		provides provider : IProvider
+	}
+	
+	component ClientComponent{
+		provides run : Runnable
+		requires fastLane : IFastLane
+		requires lane : ILane
+		requires consut : IConsult 
+	}	
+}

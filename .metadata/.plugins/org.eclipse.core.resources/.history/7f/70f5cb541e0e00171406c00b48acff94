@@ -1,0 +1,11 @@
+import tp2_obj.interfaces.IBank
+import tp2_obj.interfaces.IAccount
+
+namespace tp2_may.desk{
+	component DeskComponent{
+		provides bank : IBank
+		requires acc1 : IAccount
+		requires acc2 : IAccount
+		requires acc3 : IAccount
+	}
+}
